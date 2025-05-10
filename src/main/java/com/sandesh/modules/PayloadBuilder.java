@@ -2,7 +2,7 @@ package com.sandesh.modules;
 
 import com.google.gson.Gson;
 
-public class PayloadManager {
+public class PayloadBuilder {
     
     Gson gson;
 
