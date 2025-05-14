@@ -3,7 +3,7 @@ package com.sandesh.pojos;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CreateBooking {
+public class Booking {
 
     @SerializedName("firstname")
     @Expose
@@ -28,10 +28,10 @@ public class CreateBooking {
      * No args constructor for use in serialization
      *
      */
-    public CreateBooking() {
+    public Booking() {
     }
 
-    public CreateBooking(String firstname, String lastname, Integer totalprice, Boolean depositpaid,
+    public Booking(String firstname, String lastname, Integer totalprice, Boolean depositpaid,
             BookingDates bookingdates, String additionalneeds) {
         super();
         this.firstname = firstname;
