@@ -1,6 +1,9 @@
 package com.sandesh.assertions;
 
 import static org.testng.Assert.assertEquals;
+
+import com.sandesh.pojos.BookingDates;
+
 import static org.assertj.core.api.Assertions.*;
 
 public class AssertActions {
@@ -8,8 +11,13 @@ public class AssertActions {
     public void verifyResponseBody(String actual, String expected, String description) {
         assertEquals(actual, expected, description);
     }
-
-    public void verifyResponseBody(int actual, int expected, String description) {
+    public void verifyResponseBody(Integer actual, Integer expected, String description) {
+        assertEquals(actual, expected, description);
+    }
+    public void verifyResponseBody(Boolean actual, Boolean expected, String description) {
+        assertEquals(actual, expected, description);
+    }
+    public void verifyResponseBody(BookingDates actual, BookingDates expected, String description) {
         assertEquals(actual, expected, description);
     }
 

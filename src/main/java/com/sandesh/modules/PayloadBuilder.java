@@ -11,20 +11,18 @@ public class PayloadBuilder {
     
     Gson gson;
 
-    public String createPayloadBookingAsString() {
-        Booking booking = new Booking();
-        booking.setFirstname("Pramod");
-        booking.setLastname("Dutta");
-        booking.setTotalprice(113);
-        booking.setDepositpaid(true);
-        booking.setBookingdates(new BookingDates("2024-02-01", "2024-02-01"));
-        booking.setAdditionalneeds("Breakfast");
+    public String createPayloadBookingAsString(String firstName, String lastName, Integer totalPrice, boolean depositPaid, BookingDates bookingDates, String additionalNeeds) {
+        
+        Booking booking = new Booking(firstName,lastName,totalPrice,depositPaid,bookingDates,additionalNeeds);
+        // Booking booking = new Booking();
+        // booking.setFirstname("Pramod");
+        // booking.setLastname("Dutta");
+        // booking.setTotalprice(113);
+        // booking.setDepositpaid(true);
+        // booking.setBookingdates(new BookingDates("2024-02-01", "2024-02-01"));
+        // booking.setAdditionalneeds("Breakfast");
 
         System.out.println(booking);
-
-        // BookingDates bookingdates = new BookingDates();
-        // bookingdates.setCheckin("2024-02-01");
-        // bookingdates.setCheckout("2024-02-01");
 
         // Java Object -> JSON
         Gson gson = new Gson();
@@ -66,7 +64,5 @@ public class PayloadBuilder {
         return tokenResponse.getToken().toString();
 
     }
-
-    
 
 }

@@ -1,30 +1,29 @@
-package com.sandesh.tests.CRUD_TCs;
+package com.sandesh.tests;
 
 import org.testng.annotations.Test;
 
 import com.sandesh.base.BaseTest;
 import com.sandesh.endpoints.API_Constants;
-
 import io.restassured.RestAssured;
 import io.restassured.config.RestAssuredConfig;
 import io.restassured.config.SSLConfig;
 
-public class TestReadBooking extends BaseTest {
+public class TestAuth extends BaseTest {
 
-    @Test()
-    public void testReadBooking() {
+    @Test
+    public void testAuthentication() {
 
-        requestSpecification.basePath(API_Constants.CREATE_UPDATE_BOOKING_URL);
-        
+        requestSpecification.basePath(API_Constants.AUTH_URL);
+
         response = RestAssured
             .given(requestSpecification)
-                .header("Cache-Control", "Max-Age=86400")
                 .config(RestAssuredConfig.newConfig().sslConfig(new SSLConfig().relaxedHTTPSValidation()))
-                .when().get();
+            .when().body(payloadBuilder.setAuthPayload())
+                .post();
 
         validatableResponse = response.then().log().all();
-        validatableResponse.statusCode(200);
-    
+        validatableResponse.statusCode(200);                
+
     }
 
 }
