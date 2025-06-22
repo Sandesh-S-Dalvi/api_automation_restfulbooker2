@@ -37,7 +37,7 @@ public class BaseTest {
     public String getToken() {
         requestSpecification = RestAssured
             .given()
-            //.baseUri(API_Constants.BASE_URL)
+            .baseUri(API_Constants.BASE_URL)
             .basePath(API_Constants.AUTH_URL);
 
         String payload = payloadBuilder.setAuthPayload();

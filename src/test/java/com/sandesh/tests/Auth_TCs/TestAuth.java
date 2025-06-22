@@ -1,4 +1,4 @@
-package com.sandesh.tests;
+package com.sandesh.tests.Auth_TCs;
 
 import org.testng.annotations.Test;
 
