@@ -1,7 +1,6 @@
 package com.sandesh.base;
 
-import org.testng.annotations.BeforeTest;
-
+import org.testng.annotations.BeforeMethod;
 import com.sandesh.assertions.AssertActions;
 import com.sandesh.endpoints.API_Constants;
 import com.sandesh.modules.PayloadBuilder;
@@ -23,7 +22,7 @@ public class BaseTest {
     public Response response;
     public ValidatableResponse validatableResponse;
     
-    @BeforeTest
+    @BeforeMethod
     public void setUp() {
         payloadBuilder = new PayloadBuilder();
         assertActions = new AssertActions();

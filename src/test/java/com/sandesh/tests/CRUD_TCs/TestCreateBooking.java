@@ -26,7 +26,7 @@ public class TestCreateBooking extends BaseTest {
         return new Object[][] {
 
             {"Pramod","Dutta",100,true,"2025-02-01","2025-02-02","Breakfast"},
-            {"Sandesh",10000,1000,false,"2025-02-01","002-01","Breakfast"}
+            {"Sandesh","Dalvi",1000,false,"2025-02-01","2025-02-02","Breakfast"}
 
         };
 
@@ -62,7 +62,8 @@ public class TestCreateBooking extends BaseTest {
         assertActions.verifyStringKey(bookingResponse.getBooking().getLastname(), lastName);
         assertActions.verifyResponseBody(bookingResponse.getBooking().getTotalprice(), totalPrice, "Total Price mismatch");
         assertActions.verifyResponseBody(bookingResponse.getBooking().getDepositpaid(), depositPaid, "Deposit paid mismatch");
-        assertActions.verifyResponseBody(bookingResponse.getBooking().getBookingdates(), bookingDates, "Booking Dates mismatch");
+        assertActions.verifyResponseBody(bookingResponse.getBooking().getBookingdates().getCheckin(), bookingDates.getCheckin(), "Booking Dates mismatch");
+        assertActions.verifyResponseBody(bookingResponse.getBooking().getBookingdates().getCheckout(), bookingDates.getCheckout(), "Booking Dates mismatch");
         assertActions.verifyResponseBody(bookingResponse.getBooking().getAdditionalneeds(), additionalNeeds, "Additional Needs mismatch");
 
     }
